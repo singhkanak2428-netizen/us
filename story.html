@@ -1,0 +1,3451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Story ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(153,55,78,.22),transparent 30%),
+    radial-gradient(circle at 85% 60%,rgba(107,20,48,.22),transparent 35%),
+    #16070d;
+  color:#fff8f4;
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at center,transparent 35%,rgba(0,0,0,.32));
+  z-index:0;
+}
+
+section{
+  min-height:100vh;
+  padding:110px 8%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+h1,h2,h3{
+  color:#fff8f5;
+  text-shadow:0 4px 25px rgba(255,210,220,.15);
+}
+
+h1{
+  font-family:'Allura',cursive;
+  font-size:clamp(75px,13vw,155px);
+  font-weight:400;
+  line-height:.9;
+}
+
+h2{
+  font-family:'Allura',cursive;
+  font-size:clamp(52px,8vw,95px);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:25px;
+}
+
+h3{
+  font-family:'Cinzel',serif;
+  font-size:15px;
+  letter-spacing:3px;
+  font-weight:500;
+}
+
+p{
+  max-width:650px;
+  color:rgba(255,248,244,.82);
+  font-size:14px;
+  line-height:2;
+}
+
+.eyebrow,
+.hero .date,
+.small,
+.final-date{
+  color:#f5d9de;
+}
+
+.eyebrow{
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  letter-spacing:4px;
+  margin-bottom:20px;
+}
+
+.divider{
+  width:70px;
+  height:1px;
+  background:#e7aeb9;
+  margin:25px auto;
+  box-shadow:0 0 15px rgba(231,174,185,.4);
+}
+
+.small{
+  font-size:11px;
+  letter-spacing:2px;
+  margin-top:25px;
+}
+
+#progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:3px;
+  background:#f5ccd4;
+  z-index:5000;
+  box-shadow:0 0 14px rgba(245,204,212,.8);
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+  position:fixed;
+  bottom:-30px;
+  font-size:14px;
+  opacity:.17;
+  animation:floatHeart 12s linear infinite;
+  pointer-events:none;
+  z-index:1;
+}
+
+.heart:nth-child(1){left:8%;animation-delay:1s}
+.heart:nth-child(2){left:25%;animation-delay:5s}
+.heart:nth-child(3){left:45%;animation-delay:2s}
+.heart:nth-child(4){left:67%;animation-delay:7s}
+.heart:nth-child(5){left:88%;animation-delay:4s}
+.heart:nth-child(6){left:55%;animation-delay:9s}
+
+@keyframes floatHeart{
+  from{transform:translateY(0) rotate(0)}
+  to{transform:translateY(-110vh) rotate(360deg)}
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+}
+
+.hero .date{
+  font-family:'Cinzel',serif;
+  letter-spacing:5px;
+  font-size:12px;
+  margin-top:25px;
+}
+
+/* SCROLL REVEAL */
+
+.reveal-item{
+  opacity:0;
+  transform:translateY(45px) scale(.97);
+  filter:blur(5px);
+  transition:
+    opacity .9s ease,
+    transform .9s cubic-bezier(.2,.8,.2,1),
+    filter .9s ease;
+}
+
+.reveal-item.visible{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
+
+/* STORY */
+
+.story-card{
+  width:min(850px,100%);
+  margin:35px auto;
+  padding:50px 45px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.045);
+  backdrop-filter:blur(16px);
+  border-radius:8px;
+  box-shadow:0 25px 70px rgba(0,0,0,.28);
+  transition:.5s;
+}
+
+.story-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,220,225,.25);
+  box-shadow:0 30px 80px rgba(0,0,0,.38);
+}
+
+.story-card .number{
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:4px;
+  color:#f2cbd2;
+  margin-bottom:15px;
+}
+
+/* PHOTOS */
+
+.photo-frame{
+  width:min(760px,100%);
+  margin:35px auto;
+  position:relative;
+}
+
+.photo-frame img{
+  width:100%;
+  display:block;
+  max-height:720px;
+  object-fit:contain;
+  border-radius:4px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+.photo-caption{
+  margin-top:18px;
+  font-family:'Allura',cursive;
+  font-size:34px;
+  color:#f3d9dd;
+}
+
+.gallery{
+  width:min(1000px,100%);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:35px;
+}
+
+.gallery img{
+  width:100%;
+  height:100%;
+  min-height:250px;
+  object-fit:cover;
+  border-radius:5px;
+  transition:.7s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  cursor:pointer;
+}
+
+.gallery img:hover{
+  transform:translateY(-9px) scale(1.025);
+  box-shadow:0 30px 70px rgba(0,0,0,.5);
+}
+
+.gallery.two{
+  grid-template-columns:repeat(2,1fr);
+}
+
+/* DANCE */
+
+.dance-section{
+  position:relative;
+}
+
+.dance-video-wrap{
+  width:min(850px,100%);
+  margin:35px auto 0;
+  position:relative;
+}
+
+.dance-video{
+  width:100%;
+  max-height:720px;
+  display:block;
+  object-fit:contain;
+  border-radius:8px;
+  background:#090306;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 30px 90px rgba(0,0,0,.55);
+}
+
+.dance-caption{
+  margin-top:20px;
+  font-family:'Allura',cursive;
+  font-size:34px;
+  color:#f3d9dd;
+}
+
+.dance-note{
+  margin-top:8px;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:2px;
+  color:#dcb8bf;
+}
+
+/* SIX PARTS */
+
+.five-things{
+  width:min(950px,100%);
+  margin-top:35px;
+}
+
+.five-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.five-button{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.045);
+  color:#f8e8ea;
+  padding:13px 18px;
+  border-radius:30px;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:1.5px;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.five-button::after{
+  content:"";
+  position:absolute;
+  left:-100%;
+  top:0;
+  width:70%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  transition:.7s;
+}
+
+.five-button:hover::after,
+.five-button.active::after{
+  left:130%;
+}
+
+.five-button:hover,
+.five-button.active{
+  background:#f8e9eb;
+  color:#56162a;
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(245,190,202,.2);
+}
+
+.five-message{
+  position:relative;
+  min-height:370px;
+  padding:55px 40px;
+  border:1px solid rgba(255,255,255,.15);
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  border-radius:8px;
+  box-shadow:0 30px 80px rgba(0,0,0,.3);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.five-message::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent,rgba(255,220,225,.06),transparent);
+  transform:translateX(-100%);
+}
+
+.five-message.reveal{
+  animation:partReveal .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.five-message.reveal::before{
+  animation:panelSweep 1.2s ease;
+}
+
+@keyframes partReveal{
+  0%{
+    opacity:0;
+    transform:perspective(900px) rotateX(8deg) translateY(30px) scale(.96);
+    filter:blur(8px);
+  }
+  60%{
+    opacity:1;
+    transform:perspective(900px) rotateX(-1deg) translateY(-3px) scale(1.01);
+    filter:blur(0);
+  }
+  100%{
+    transform:perspective(900px) rotateX(0) translateY(0) scale(1);
+  }
+}
+
+@keyframes panelSweep{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(100%)}
+}
+
+.five-message .part-label{
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:5px;
+  color:#f3cfd5;
+  margin-bottom:20px;
+}
+
+.five-message h3{
+  font-family:'Allura',cursive;
+  font-size:48px;
+  letter-spacing:0;
+  color:#fff0f2;
+  margin-bottom:25px;
+}
+
+.five-message p{
+  max-width:700px;
+  font-size:14px;
+  line-height:2;
+  color:rgba(255,248,244,.84);
+}
+
+.part-progress{
+  margin-top:25px;
+  width:min(300px,80%);
+  height:2px;
+  background:rgba(255,255,255,.1);
+  overflow:hidden;
+}
+
+.part-progress-fill{
+  height:100%;
+  width:16.66%;
+  background:#f0c0ca;
+  transition:.5s ease;
+}
+
+.part-counter{
+  margin-top:10px;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#eac4cb;
+}
+
+/* BUTTONS */
+
+.love-button{
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.06);
+  color:white;
+  padding:13px 25px;
+  border-radius:30px;
+  font-family:'Montserrat',sans-serif;
+  cursor:pointer;
+  transition:.35s;
+}
+
+.love-button:hover{
+  background:#fff;
+  color:#531326;
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(255,255,255,.15);
+}
+
+/* REASONS */
+
+.reason-box{
+  width:min(650px,100%);
+  min-height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:35px;
+  border:1px solid rgba(255,255,255,.15);
+  background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  border-radius:8px;
+  margin:25px 0;
+}
+
+#reasonText{
+  font-family:'Allura',cursive;
+  font-size:42px;
+  color:#f8e1e5;
+  line-height:1.2;
+  transition:.3s;
+}
+
+/* OPEN WHEN */
+
+.envelopes{
+  width:min(850px,100%);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+
+.envelope{
+  min-height:155px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.035);
+  color:white;
+  padding:30px;
+  cursor:pointer;
+  transition:.4s;
+  border-radius:7px;
+}
+
+.envelope:hover{
+  transform:translateY(-7px);
+  background:rgba(255,255,255,.08);
+  box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+.envelope .emoji{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.envelope span{
+  display:block;
+  font-family:'Cinzel',serif;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+/* SPECIAL SECTION */
+
+.special-section{
+  position:relative;
+}
+
+.special-choice-wrap{
+  width:min(900px,100%);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:40px;
+}
+
+.special-choice{
+  position:relative;
+  min-height:230px;
+  padding:35px 25px;
+  border:1px solid rgba(255,255,255,.16);
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  color:#fff;
+  border-radius:12px;
+  cursor:pointer;
+  overflow:hidden;
+  transition:.5s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 25px 65px rgba(0,0,0,.25);
+}
+
+.special-choice::before{
+  content:"";
+  position:absolute;
+  inset:-100%;
+  background:
+    radial-gradient(circle,rgba(255,210,220,.16),transparent 30%);
+  transition:1s ease;
+}
+
+.special-choice:hover{
+  transform:translateY(-9px);
+  border-color:rgba(255,220,225,.35);
+  box-shadow:0 35px 85px rgba(0,0,0,.42);
+}
+
+.special-choice:hover::before{
+  inset:0;
+}
+
+.special-choice.active{
+  border-color:rgba(255,220,225,.5);
+  background:
+    linear-gradient(145deg,rgba(255,215,225,.13),rgba(255,255,255,.035));
+  transform:translateY(-5px);
+}
+
+.special-number{
+  position:relative;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:4px;
+  color:#edc4cc;
+  margin-bottom:25px;
+}
+
+.special-icon{
+  position:relative;
+  font-size:36px;
+  margin-bottom:18px;
+}
+
+.special-choice h3{
+  position:relative;
+  font-family:'Allura',cursive;
+  font-size:40px;
+  letter-spacing:0;
+  color:#fff0f2;
+  margin-bottom:12px;
+}
+
+.special-choice p{
+  position:relative;
+  max-width:100%;
+  font-size:11px;
+  line-height:1.8;
+  color:rgba(255,248,244,.68);
+}
+
+.special-choice .tap-line{
+  position:relative;
+  display:block;
+  margin-top:20px;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:2px;
+  color:#e7bbc4;
+}
+
+.special-reveal{
+  width:min(850px,100%);
+  min-height:260px;
+  margin-top:25px;
+  padding:45px 35px;
+  border:1px solid rgba(255,255,255,.15);
+  background:
+    radial-gradient(circle at top,rgba(143,43,70,.22),transparent 55%),
+    rgba(255,255,255,.035);
+  border-radius:10px;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  box-shadow:0 30px 80px rgba(0,0,0,.32);
+}
+
+.special-reveal.active{
+  display:flex;
+  animation:specialReveal .8s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes specialReveal{
+  0%{
+    opacity:0;
+    transform:translateY(25px) scale(.96);
+    filter:blur(7px);
+  }
+  60%{
+    opacity:1;
+    transform:translateY(-3px) scale(1.01);
+    filter:blur(0);
+  }
+  100%{
+    transform:translateY(0) scale(1);
+  }
+}
+
+.special-reveal .reveal-label{
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:4px;
+  color:#edc4cc;
+  margin-bottom:18px;
+}
+
+.special-reveal h3{
+  font-family:'Allura',cursive;
+  font-size:50px;
+  letter-spacing:0;
+  color:#fff0f2;
+  margin-bottom:20px;
+}
+
+.special-reveal p{
+  max-width:680px;
+  line-height:2;
+  font-size:14px;
+  color:rgba(255,248,244,.84);
+}
+
+.special-song-status{
+  margin-top:25px;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:2px;
+  color:#e9c4cb;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(8,2,5,.91);
+  backdrop-filter:blur(18px);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:25px;
+  z-index:4000;
+}
+
+.modal.active{
+  display:flex;
+}
+
+.modal-box{
+  width:min(650px,100%);
+  max-height:85vh;
+  overflow-y:auto;
+  background:
+    radial-gradient(circle at top,#401321,#250c15 60%);
+  border:1px solid rgba(255,255,255,.2);
+  padding:50px 35px;
+  text-align:center;
+  box-shadow:0 30px 100px rgba(0,0,0,.7);
+  animation:modalIn .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.modal-box h3{
+  margin-bottom:25px;
+  color:#fff0f2;
+}
+
+.modal-box p{
+  margin:0 auto 30px;
+}
+
+.secret-content{
+  text-align:left;
+}
+
+.secret-content p{
+  max-width:100%;
+  margin-bottom:22px;
+  line-height:1.9;
+  color:rgba(255,248,244,.86);
+}
+
+@keyframes modalIn{
+  from{
+    transform:translateY(30px) scale(.94);
+    opacity:0;
+    filter:blur(8px);
+  }
+  to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+    filter:blur(0);
+  }
+}
+
+/* CAKE */
+
+.cake-area{
+  margin-top:35px;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.ceremony{
+  width:min(850px,100%);
+  margin-bottom:35px;
+  padding:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.035);
+  border-radius:50px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.ceremony-step{
+  padding:9px 14px;
+  border-radius:30px;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:1.5px;
+  color:#d9b5bb;
+  transition:.4s;
+}
+
+.ceremony-step.active{
+  background:rgba(255,235,239,.12);
+  color:#fff0f2;
+  box-shadow:0 0 20px rgba(255,200,210,.12);
+}
+
+.cake-stage{
+  position:relative;
+  width:min(430px,92vw);
+  height:410px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  margin-bottom:25px;
+}
+
+.plate{
+  position:absolute;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:390px;
+  max-width:88vw;
+  height:45px;
+  border-radius:50%;
+  background:linear-gradient(180deg,#f6e6e7,#c9a4aa);
+  box-shadow:
+    0 20px 35px rgba(0,0,0,.5),
+    inset 0 -7px 10px rgba(80,20,35,.2);
+}
+
+.plate::after{
+  content:"";
+  position:absolute;
+  left:8%;
+  top:7px;
+  width:84%;
+  height:24px;
+  border-radius:50%;
+  border:1px solid rgba(90,30,45,.25);
+}
+
+.cake{
+  position:absolute;
+  bottom:45px;
+  width:340px;
+  max-width:78vw;
+  height:285px;
+  transition:.8s ease;
+  filter:drop-shadow(0 25px 25px rgba(0,0,0,.35));
+}
+
+.cake-layer{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  border-radius:9px 9px 20px 20px;
+  transition:.8s ease;
+}
+
+.layer-bottom{
+  bottom:0;
+  height:90px;
+  background:linear-gradient(180deg,#8e3851,#622137);
+  border:2px solid rgba(255,220,225,.15);
+}
+
+.layer-middle{
+  bottom:73px;
+  width:94%;
+  height:88px;
+  background:linear-gradient(180deg,#bd6176,#80334a);
+  border:2px solid rgba(255,230,232,.18);
+  z-index:2;
+}
+
+.layer-top{
+  bottom:145px;
+  width:88%;
+  height:83px;
+  background:linear-gradient(180deg,#d98294,#a84962);
+  border:2px solid rgba(255,235,238,.2);
+  z-index:3;
+}
+
+.frosting{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,#fff4f0,#f3d9d8);
+  border-radius:50%;
+  z-index:6;
+  box-shadow:0 5px 12px rgba(70,20,30,.12);
+}
+
+.frosting.top{
+  width:88%;
+  height:42px;
+  bottom:207px;
+}
+
+.frosting.mid{
+  width:94%;
+  height:35px;
+  bottom:128px;
+  z-index:5;
+}
+
+.frosting.bottom{
+  width:100%;
+  height:30px;
+  bottom:63px;
+  z-index:5;
+}
+
+.drip{
+  position:absolute;
+  width:18px;
+  height:30px;
+  background:#f4dddc;
+  border-radius:0 0 12px 12px;
+  z-index:7;
+}
+
+.drip.d1{left:15%;bottom:188px}
+.drip.d2{left:30%;bottom:186px;height:40px}
+.drip.d3{left:52%;bottom:187px;height:27px}
+.drip.d4{left:70%;bottom:188px;height:37px}
+.drip.d5{left:85%;bottom:187px;height:25px}
+
+.sprinkles{
+  position:absolute;
+  z-index:10;
+  font-size:17px;
+  letter-spacing:8px;
+  color:#8d3650;
+}
+
+.sprinkles.one{
+  bottom:222px;
+  left:18%;
+}
+
+.sprinkles.two{
+  bottom:143px;
+  left:27%;
+  font-size:13px;
+}
+
+.berry{
+  position:absolute;
+  width:19px;
+  height:19px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ffd6dc,#8e2948 55%,#481021);
+  z-index:11;
+  box-shadow:0 4px 8px rgba(0,0,0,.3);
+}
+
+.berry.b1{left:29%;bottom:224px}
+.berry.b2{left:68%;bottom:224px}
+.berry.b3{left:48%;bottom:230px}
+
+.candle{
+  position:absolute;
+  width:15px;
+  height:62px;
+  border-radius:4px 4px 3px 3px;
+  top:2px;
+  z-index:30;
+  background:repeating-linear-gradient(
+    -45deg,
+    #f8d9df 0 7px,
+    #b85c73 7px 12px
+  );
+  box-shadow:0 7px 10px rgba(0,0,0,.2);
+}
+
+.candle:nth-of-type(1){left:31%}
+.candle:nth-of-type(2){left:47%}
+.candle:nth-of-type(3){left:63%}
+
+.flame{
+  position:absolute;
+  width:16px;
+  height:25px;
+  left:50%;
+  transform:translateX(-50%);
+  top:-28px;
+  background:radial-gradient(circle at 50% 70%,#fff5b8,#ffb347 55%,#ff7043);
+  border-radius:50%;
+  animation:flicker .65s infinite alternate;
+  box-shadow:0 0 20px #ffbd5c;
+}
+
+@keyframes flicker{
+  from{transform:translateX(-50%) scale(.85) rotate(-4deg)}
+  to{transform:translateX(-50%) scale(1.1) rotate(5deg)}
+}
+
+.knife{
+  position:absolute;
+  z-index:50;
+  left:50%;
+  bottom:115px;
+  width:105px;
+  height:35px;
+  transform:translateX(75px) rotate(-18deg);
+  cursor:grab;
+  touch-action:none;
+  user-select:none;
+  transition:transform .12s ease;
+}
+
+.knife:active{
+  cursor:grabbing;
+}
+
+.knife-blade{
+  position:absolute;
+  left:0;
+  top:8px;
+  width:70px;
+  height:13px;
+  background:linear-gradient(180deg,#fff,#b9bdc3);
+  clip-path:polygon(0 0,100% 0,80% 100%,0 100%);
+  border-radius:2px;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+
+.knife-handle{
+  position:absolute;
+  right:0;
+  top:3px;
+  width:45px;
+  height:24px;
+  border-radius:5px 10px 10px 5px;
+  background:linear-gradient(90deg,#3a1622,#12070c);
+  box-shadow:0 4px 8px rgba(0,0,0,.4);
+}
+
+.cut-guide{
+  position:absolute;
+  left:50%;
+  bottom:145px;
+  width:285px;
+  height:2px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,#f7cbd3,transparent);
+  opacity:.25;
+  z-index:20;
+  box-shadow:0 0 15px rgba(247,203,211,.5);
+}
+
+.cut-progress-wrap{
+  width:260px;
+  height:4px;
+  border-radius:5px;
+  background:rgba(255,255,255,.1);
+  margin:0 auto 18px;
+  overflow:hidden;
+}
+
+.cut-progress{
+  height:100%;
+  width:0%;
+  background:#f3bdc8;
+  box-shadow:0 0 12px rgba(243,189,200,.8);
+  transition:width .08s linear;
+}
+
+.cake-instruction{
+  margin-top:5px;
+  color:#f0cbd1;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.cake-message{
+  margin-top:20px;
+  font-family:'Allura',cursive;
+  font-size:38px;
+  color:#fff0f2;
+  min-height:70px;
+  line-height:1.15;
+}
+
+.piece-label{
+  position:absolute;
+  bottom:100px;
+  font-family:'Allura',cursive;
+  font-size:25px;
+  color:#f8dfe3;
+  opacity:0;
+  transition:.7s;
+  z-index:40;
+}
+
+.piece-left{left:15px}
+.piece-right{right:15px}
+
+.cake.cut .layer-left{
+  transform:translateX(-72%);
+}
+
+.cake.cut .layer-right{
+  transform:translateX(-28%);
+}
+
+.cake.cut .piece-label{
+  opacity:1;
+}
+
+.cake.cut .cut-guide{
+  opacity:0;
+}
+
+.cake.cut .knife{
+  opacity:0;
+  pointer-events:none;
+}
+
+.layer-left,
+.layer-right{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:35;
+  transition:.8s cubic-bezier(.2,.8,.2,1);
+}
+
+.layer-left::before,
+.layer-right::before{
+  content:"";
+  position:absolute;
+  top:145px;
+  width:44%;
+  height:83px;
+  background:linear-gradient(180deg,#d98294,#a84962);
+  border-radius:9px 9px 20px 20px;
+}
+
+.layer-left::after,
+.layer-right::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  width:50%;
+  height:90px;
+  background:linear-gradient(180deg,#8e3851,#622137);
+  border-radius:9px 9px 20px 20px;
+}
+
+.layer-left::before,
+.layer-left::after{
+  left:0;
+}
+
+.layer-right::before,
+.layer-right::after{
+  right:0;
+}
+
+.cake.cut .layer-left,
+.cake.cut .layer-right{
+  opacity:.98;
+}
+
+/* CONFETTI */
+
+.confetti-heart{
+  position:fixed;
+  z-index:9999;
+  pointer-events:none;
+  animation:confettiFall 2.7s ease-out forwards;
+}
+
+@keyframes confettiFall{
+  from{
+    transform:translateY(0) rotate(0) scale(1);
+    opacity:1;
+  }
+  to{
+    transform:translateY(100vh) rotate(500deg) scale(.7);
+    opacity:0;
+  }
+}
+
+/* SECRET */
+
+.secret-heart{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:3000;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(45,8,20,.78);
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+  backdrop-filter:blur(12px);
+  transition:.4s;
+  animation:secretPulse 2.5s infinite;
+}
+
+.secret-heart:hover{
+  transform:scale(1.15);
+  background:#fff;
+  color:#64152d;
+}
+
+@keyframes secretPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(245,190,202,0)}
+  50%{box-shadow:0 0 0 10px rgba(245,190,202,.07)}
+}
+
+/* MUSIC */
+
+.music-player{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  z-index:3000;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 15px 10px 10px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50px;
+  background:rgba(45,8,20,.78);
+  backdrop-filter:blur(15px);
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.music-player button{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);
+  background:#fff;
+  color:#64152d;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.music-player span{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  color:#fff;
+  letter-spacing:1px;
+}
+
+.music-player small{
+  display:block;
+  margin-top:3px;
+  color:rgba(255,255,255,.65);
+  font-size:8px;
+}
+
+.music-player.playing button{
+  animation:musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}
+  50%{box-shadow:0 0 0 9px rgba(255,255,255,0)}
+}
+
+/* LETTER */
+
+.letter{
+  width:min(800px,100%);
+  padding:55px 35px;
+  border-top:1px solid rgba(255,255,255,.18);
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.letter p{
+  font-family:'Allura',cursive;
+  font-size:29px;
+  line-height:1.65;
+  color:#f3dfe2;
+  max-width:100%;
+  text-align:left;
+}
+
+/* FINAL */
+
+.final-screen{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at center,rgba(143,43,70,.28),transparent 45%),
+    #10050a;
+}
+
+.final-heart{
+  font-size:55px;
+  margin-bottom:20px;
+  animation:finalHeart 2s ease-in-out infinite;
+}
+
+@keyframes finalHeart{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+}
+
+.final-screen h2{
+  font-size:clamp(60px,10vw,115px);
+}
+
+.final-screen .final-line{
+  font-family:'Allura',cursive;
+  font-size:34px;
+  color:#f2d9dd;
+  max-width:700px;
+  line-height:1.3;
+}
+
+.final-date{
+  margin-top:30px;
+  font-family:'Cinzel',serif;
+  letter-spacing:4px;
+  font-size:11px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+  section{
+    padding:90px 6%;
+  }
+
+  .story-card{
+    padding:35px 22px;
+  }
+
+  .gallery,
+  .gallery.two,
+  .envelopes{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img{
+    min-height:220px;
+    max-height:600px;
+  }
+
+  #reasonText{
+    font-size:34px;
+  }
+
+  .five-buttons{
+    gap:8px;
+  }
+
+  .five-button{
+    padding:10px 13px;
+    font-size:8px;
+  }
+
+  .five-message{
+    padding:40px 22px;
+    min-height:420px;
+  }
+
+  .five-message h3{
+    font-size:40px;
+  }
+
+  .five-message p{
+    font-size:13px;
+  }
+
+  .modal-box{
+    padding:40px 23px;
+  }
+
+  .secret-content p{
+    font-size:13px;
+  }
+
+  .music-player{
+    left:12px;
+    bottom:12px;
+  }
+
+  .secret-heart{
+    right:12px;
+    bottom:12px;
+  }
+
+  .letter p{
+    font-size:25px;
+    line-height:1.6;
+  }
+
+  .final-screen .final-line{
+    font-size:29px;
+  }
+
+  .ceremony{
+    border-radius:20px;
+    gap:4px;
+  }
+
+  .ceremony-step{
+    font-size:7px;
+    padding:8px 8px;
+  }
+
+  .cake-stage{
+    height:360px;
+  }
+
+  .cake{
+    transform:scale(.82);
+    transform-origin:center bottom;
+  }
+
+  .knife{
+    transform:translateX(50px) rotate(-18deg);
+  }
+
+  .cake-message{
+    font-size:32px;
+  }
+
+  .special-choice-wrap{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .special-choice{
+    min-height:205px;
+    padding:30px 20px;
+  }
+
+  .special-choice h3{
+    font-size:36px;
+  }
+
+  .special-reveal{
+    padding:40px 22px;
+  }
+
+  .special-reveal h3{
+    font-size:42px;
+  }
+
+  .special-reveal p{
+    font-size:13px;
+  }
+
+  .dance-caption{
+    font-size:30px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="eyebrow">OCTOBER 4 · 2026</div>
+
+  <h1>Our Story</h1>
+
+  <div class="divider"></div>
+
+  <p>
+    It started at the gym. And somehow, one deleted message
+    became a whole year of memories.
+  </p>
+
+  <div class="date">a year of you, a year of us. ❤️</div>
+</section>
+
+<!-- BEGINNING -->
+
+<section>
+  <div class="story-card reveal-item">
+    <div class="number">01 · THE BEGINNING</div>
+
+    <h2>It started with a message.</h2>
+
+    <p>
+      October 3 — the gym.<br>
+      October 4 — you texted first, then deleted it.<br>
+      I asked what you wrote and why you deleted it.
+      And somehow, that tiny conversation became the beginning of everything.
+    </p>
+  </div>
+</section>
+
+<!-- SHOULDER -->
+
+<section>
+  <div class="story-card reveal-item">
+    <div class="number">02 · THAT SHOULDER WORKOUT</div>
+
+    <h2>You made me feel special.</h2>
+
+    <p>
+      Somewhere between the sets, the gym noise,
+      and that ordinary workout,
+      you made an ordinary day feel like something
+      I would remember for a very long time.
+    </p>
+  </div>
+</section>
+
+<!-- TWO HOURS -->
+
+<section>
+  <div class="story-card reveal-item">
+    <div class="number">03 · TWO HOURS</div>
+
+    <h2>We forgot about time.</h2>
+
+    <p>
+      Dussehra.<br>
+      You had somewhere to go,
+      but you stayed.
+      We talked face-to-face for almost two hours.
+      And somehow, those two hours became one of my favourite memories.
+    </p>
+
+    <div class="small">
+      We never got another moment quite like that.
+    </div>
+  </div>
+</section>
+
+<!-- CAFE -->
+
+<section>
+  <div class="story-card reveal-item">
+    <div class="number">04 · THE CAFÉ</div>
+
+    <h2>Half an hour was enough.</h2>
+
+    <p>
+      After almost a year without normal outings,
+      you came to the café for me.
+      Just half an hour.
+      A few photos.
+      A small moment.
+      But to me, it meant so much.
+    </p>
+  </div>
+</section>
+
+<!-- 7 MOHIT PHOTOS -->
+
+<section id="mohitSoloSection">
+
+  <div class="eyebrow">05 · JUST YOU</div>
+
+  <h2>And then, there's you.</h2>
+
+  <div class="gallery">
+
+    <div class="reveal-item">
+      <img src="images/mohit1.png" alt="Mohit">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/mohit2.png" alt="Mohit">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/mohit3.png" alt="Mohit">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/mohit4.png" alt="Mohit">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/mohit5.png" alt="Mohit">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/mohit6.png" alt="Mohit">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/mohit7.png" alt="Mohit">
+    </div>
+
+  </div>
+
+  <div class="small">
+    just you. just this moment. ❤️
+  </div>
+
+</section>
+
+<!-- DANCE -->
+
+<section class="dance-section" id="danceSection">
+
+  <div class="eyebrow">06 · A LITTLE DANCE</div>
+
+  <h2>Just a little moment.</h2>
+
+  <p>
+    Because some memories don't need words.
+    They just need a little music. ❤️
+  </p>
+
+  <div class="dance-video-wrap">
+
+    <video
+      id="danceVideo"
+      class="dance-video"
+      controls
+      playsinline
+      preload="metadata"
+    >
+      <source src="dance.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+
+  <div class="dance-caption">
+    Dance with me. ❤️
+  </div>
+
+  <div class="dance-note">
+    TAP PLAY TO WATCH & LISTEN
+  </div>
+
+</section>
+
+<!-- 3 US PHOTOS -->
+
+<section>
+  <div class="eyebrow">07 · LITTLE MOMENTS</div>
+
+  <h2>The moments I keep.</h2>
+
+  <div class="gallery">
+
+    <div class="reveal-item">
+      <img src="images/us1.png" alt="Us">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/us2.png" alt="Us">
+    </div>
+
+    <div class="reveal-item">
+      <img src="images/us3.png" alt="Us">
+    </div>
+
+  </div>
+</section>
+
+<!-- SOMEHOW -->
+
+<section>
+  <div class="story-card reveal-item">
+
+    <div class="number">08 · SOMEHOW</div>
+
+    <h2>You're still everywhere.</h2>
+
+    <p>
+      In the middle of studying.
+      While cooking.
+      During workouts.
+      In random thoughts.
+      Somehow, even when you're not around,
+      a part of you still finds its way into my everyday life.
+    </p>
+
+  </div>
+</section>
+
+<!-- SOMEDAY -->
+
+<section>
+  <div class="story-card reveal-item">
+
+    <div class="number">09 · SOMEDAY</div>
+
+    <h2>Let's see the world.</h2>
+
+    <p>
+      I haven't seen much of the world yet.
+      But someday I want to earn my own money,
+      pack a bag,
+      and go somewhere completely new.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>
+      And when I imagine those first adventures,
+      somehow, I still imagine you there.
+    </p>
+
+  </div>
+</section>
+
+<!-- SIX PARTS -->
+
+<section>
+
+  <div class="eyebrow">10 · SOMETHING I WANTED YOU TO KNOW</div>
+
+  <h2>Things I never say out loud.</h2>
+
+  <p>
+    Maybe it's easier to say some things here.
+    So... open them one by one.
+  </p>
+
+  <div class="five-things">
+
+    <div class="five-buttons">
+
+      <button class="five-button active" data-part="0">
+        01 · WHY I MADE THIS
+      </button>
+
+      <button class="five-button" data-part="1">
+        02 · WHAT YOU MEAN
+      </button>
+
+      <button class="five-button" data-part="2">
+        03 · BELIEVE ME
+      </button>
+
+      <button class="five-button" data-part="3">
+        04 · MY MOTIVATION
+      </button>
+
+      <button class="five-button" data-part="4">
+        05 · MY ONLY WISH
+      </button>
+
+      <button class="five-button" data-part="5">
+        06 · EVERYTHING I'M BUILDING
+      </button>
+
+    </div>
+
+    <div class="five-message reveal" id="fiveMessage">
+
+      <div class="part-label" id="partLabel">
+        PART 01
+      </div>
+
+      <h3 id="partTitle">
+        Why I Made This
+      </h3>
+
+      <p id="partText">
+        This is the first time, and maybe the last time,
+        I'm making an anniversary gift like this for someone
+        I love with my whole heart.
+
+        Because after this year, I just want trips,
+        random plans, lots of memories,
+        and something new to remember every anniversary.
+      </p>
+
+      <div class="part-progress">
+        <div class="part-progress-fill" id="partProgress"></div>
+      </div>
+
+      <div class="part-counter" id="partCounter">
+        01 / 06
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REASONS -->
+
+<section>
+
+  <div class="eyebrow">11 · JUST BECAUSE</div>
+
+  <h2>A few reasons I love you.</h2>
+
+  <div class="reason-box">
+
+    <div id="reasonText">
+      Because somehow, you became home.
+    </div>
+
+  </div>
+
+  <button class="love-button" id="reasonButton">
+    Another one ❤️
+  </button>
+
+</section>
+
+<!-- OPEN WHEN -->
+
+<section>
+
+  <div class="eyebrow">12 · FOR LATER</div>
+
+  <h2>Open when...</h2>
+
+  <p>
+    For the moments when I can't be there beside you.
+  </p>
+
+  <div class="envelopes">
+
+    <button
+      class="envelope"
+      data-message="If you miss me, remember that somewhere, I'm probably thinking about you too. ❤️"
+    >
+      <div class="emoji">💌</div>
+      <span>you miss me</span>
+    </button>
+
+    <button
+      class="envelope"
+      data-message="You have made me smile more times than you probably realise. So here's one back: smile. ❤️"
+    >
+      <div class="emoji">🌷</div>
+      <span>you need a smile</span>
+    </button>
+
+    <button
+      class="envelope"
+      data-message="Whatever this is, it has been real to me. And every memory here means something. ❤️"
+    >
+      <div class="emoji">🌙</div>
+      <span>you doubt us</span>
+    </button>
+
+    <button
+      class="envelope"
+      data-message="Even when I'm not physically there, I hope you remember that you matter to me more than words can explain. ❤️"
+    >
+      <div class="emoji">🫶</div>
+      <span>you need me</span>
+    </button>
+
+  </div>
+
+</section>
+
+<!-- SPECIAL SECTION -->
+
+<section class="special-section">
+
+  <div class="eyebrow">13 · SOMETHING DIFFERENT</div>
+
+  <h2>Three things I want you to know.</h2>
+
+  <p>
+    Don't just read these ones...
+    tap them. ❤️
+  </p>
+
+  <div class="special-choice-wrap">
+
+    <button class="special-choice" id="whyYouButton" type="button">
+
+      <div class="special-number">
+        01 · THE ANSWER
+      </div>
+
+      <div class="special-icon">
+        ♡
+      </div>
+
+      <h3>
+        Why I Want You Only
+      </h3>
+
+      <p>
+        There are some things I could never explain
+        in just one sentence.
+      </p>
+
+      <span class="tap-line">
+        TAP TO OPEN · LISTEN
+      </span>
+
+    </button>
+
+
+    <button class="special-choice" id="whenNeedYouButton" type="button">
+
+      <div class="special-number">
+        02 · THE MOMENTS
+      </div>
+
+      <div class="special-icon">
+        ✦
+      </div>
+
+      <h3>
+        Kab Kab Tum Chahiye
+      </h3>
+
+      <p>
+        Maybe the answer is...
+        more often than I admit.
+      </p>
+
+      <span class="tap-line">
+        TAP TO OPEN · LISTEN
+      </span>
+
+    </button>
+
+
+    <button class="special-choice" id="whatIWantButton" type="button">
+
+      <div class="special-number">
+        03 · THE ONE THING
+      </div>
+
+      <div class="special-icon">
+        ♡
+      </div>
+
+      <h3>
+        What I Want From You
+      </h3>
+
+      <p>
+        There is only one thing I really want...
+      </p>
+
+      <span class="tap-line">
+        TAP TO OPEN · LISTEN
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <div class="special-reveal" id="specialReveal">
+
+    <div class="reveal-label" id="specialRevealLabel">
+      LISTEN
+    </div>
+
+    <h3 id="specialRevealTitle">
+      Why I Want You Only
+    </h3>
+
+    <p id="specialRevealText">
+      Some things are easier to feel than explain.
+      This one is just for you. ❤️
+    </p>
+
+    <div class="special-song-status" id="specialSongStatus">
+      ♫ playing your song clip
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CAKE -->
+
+<section>
+
+  <div class="eyebrow">14 · OUR FIRST ANNIVERSARY</div>
+
+  <h2>Before you leave...</h2>
+
+  <p>
+    There's one little ceremony waiting for you.
+  </p>
+
+  <div class="cake-area">
+
+    <div class="ceremony">
+
+      <div class="ceremony-step active" id="step1">
+        01 · LIGHT THE CANDLES
+      </div>
+
+      <div class="ceremony-step" id="step2">
+        02 · MAKE A WISH
+      </div>
+
+      <div class="ceremony-step" id="step3">
+        03 · CUT THE CAKE
+      </div>
+
+      <div class="ceremony-step" id="step4">
+        04 · CELEBRATE
+      </div>
+
+    </div>
+
+    <div class="cake-stage">
+
+      <div class="plate"></div>
+
+      <div class="cake" id="cake">
+
+        <div class="cake-layer layer-bottom"></div>
+        <div class="cake-layer layer-middle"></div>
+        <div class="cake-layer layer-top"></div>
+
+        <div class="frosting top"></div>
+        <div class="frosting mid"></div>
+        <div class="frosting bottom"></div>
+
+        <div class="drip d1"></div>
+        <div class="drip d2"></div>
+        <div class="drip d3"></div>
+        <div class="drip d4"></div>
+        <div class="drip d5"></div>
+
+        <div class="sprinkles one">✦ · ✧ · ✦</div>
+        <div class="sprinkles two">· ✦ · ✧</div>
+
+        <div class="berry b1"></div>
+        <div class="berry b2"></div>
+        <div class="berry b3"></div>
+
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+
+        <div class="layer-left"></div>
+        <div class="layer-right"></div>
+
+        <div class="knife" id="knife">
+          <div class="knife-blade"></div>
+          <div class="knife-handle"></div>
+        </div>
+
+        <div class="piece-label piece-left">
+          yours ♡
+        </div>
+
+        <div class="piece-label piece-right">
+          mine ♡
+        </div>
+
+      </div>
+
+      <div class="cut-guide"></div>
+
+    </div>
+
+    <div class="cut-progress-wrap">
+      <div class="cut-progress" id="cutProgress"></div>
+    </div>
+
+    <button class="love-button" id="wishButton">
+      Make a wish ✨
+    </button>
+
+    <div class="cake-message" id="cakeMessage"></div>
+
+    <div class="cake-instruction" id="cakeInstruction">
+      First make your wish... then drag the knife across the cake ❤️
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ONE YEAR -->
+
+<section>
+
+  <div class="eyebrow">15 · ONE YEAR</div>
+
+  <h2>A year of us.</h2>
+
+  <div class="photo-frame reveal-item">
+
+    <img src="images/us3.png" alt="Us">
+
+    <div class="photo-caption">
+      a year of you, a year of us. ❤️
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DEAR MOHIT -->
+
+<section>
+
+  <div class="eyebrow">16 · TO YOU</div>
+
+  <div class="letter">
+
+    <h2>Dear Mohit,</h2>
+
+    <div class="divider"></div>
+
+    <p>
+      I don't know what's the definition of love,
+      but I guess after spending 365 days with you,
+      in which humne pyaar dekha, rona dekha,
+      ek dusre se alag hoke bhi dekha,
+      lekin har baar hum ek dusre ke aur qareeb aa gaye...
+      warna jise ek baar chhod do,
+      usse dobara baat toh kya,
+      dekhne tak ka mann nahi karta.
+      Toh mere liye toh yahi pyaar hai.
+    </p>
+
+    <br>
+
+    <p>
+      Aur ek aur bhi cheez hai.
+      Insaan jiske saath hass le,
+      usse wo bhula sakta hai,
+      lekin jiske saath ro le,
+      wo usse kabhi nahi bhula sakta.
+      Ye bhi pyaar hai.
+    </p>
+
+    <br>
+
+    <p>
+      Pyaar, pyaar, pyaar...
+      Tumhare saath har cheez mein pyaar hai.
+      Kyuki tum hi mera pyaar ho.
+    </p>
+
+    <br>
+
+    <p>
+      Tum mujhe apna pyaar maano ya na maano,
+      but mera pyaar tum hi ho aur rahoge.
+    </p>
+
+    <br>
+
+    <p>
+      Pehle darti thi ye kehne se,
+      lekin ab nahi darti.
+      Mai akele reh lungi,
+      par tumhare alawa kisi aur ke saath kabhi nahi reh paungi,
+      kyuki mai jhoothi nahi hu
+      aur tumhare alawa kisi aur ko dekhne tak ka mann nahi karta mera.
+    </p>
+
+    <br>
+
+    <p>
+      Yaar tum baat karte ho ki mujhe kisi aur se pyaar ho jayega...
+      huh.
+      Tum bhi yahi ho, mai bhi yahi.
+      Dekh lena.
+    </p>
+
+    <br>
+
+    <p>
+      I'll always wait for you.
+      Jao, azaad ho tum mujhse.
+      Jo tumhe karna hai karo.
+      I'll support you in everything.
+    </p>
+
+    <br>
+
+    <p>
+      But ye kabhi galti se bhi mat sochna
+      ki mai tumhe pyaar karna chhod dungi.
+    </p>
+
+    <br>
+
+    <p>
+      Whatever this is,
+      I hope we never stop finding our way back to each other.
+    </p>
+
+    <br>
+
+    <p>
+      Happy first anniversary. ❤️
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final-screen">
+
+  <div class="final-heart">❤️</div>
+
+  <div class="eyebrow">OCTOBER 4</div>
+
+  <h2>Still you.</h2>
+
+  <div class="divider"></div>
+
+  <div class="final-line">
+    Whatever this is,<br>
+    I'm glad it became our story.
+  </div>
+
+  <div class="final-date">
+    ONE YEAR · ONE STORY · COUNTLESS MEMORIES
+  </div>
+
+</section>
+
+<!-- EXISTING MUSIC -->
+
+<audio id="ourSong" preload="metadata"></audio>
+
+<!-- MOHIT PHOTO MUSIC -->
+
+<audio id="mohitSoloSong" preload="metadata" loop>
+  <source src="mohit-song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-player" id="musicPlayer">
+
+  <button id="musicBtn" type="button">♪</button>
+
+  <div>
+    <span id="musicTitle">our song</span>
+    <small id="musicStatus">press when you're ready ❤️</small>
+  </div>
+
+</div>
+
+<!-- SECRET HEART -->
+
+<button class="secret-heart" id="secretHeart" type="button">
+  ♥
+</button>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <h3 id="modalTitle">
+      For you ❤️
+    </h3>
+
+    <div id="modalMessage"></div>
+
+    <button class="love-button" id="closeModal" type="button">
+      Close ❤️
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+/* SCROLL PROGRESS */
+
+window.addEventListener("scroll",()=>{
+
+  const scrollTop=window.scrollY;
+
+  const height=
+    document.documentElement.scrollHeight-
+    document.documentElement.clientHeight;
+
+  const progress=
+    height>0 ? (scrollTop/height)*100 : 0;
+
+  document.getElementById("progress").style.width=
+    progress+"%";
+
+});
+
+
+/* SCROLL REVEAL */
+
+const revealObserver=
+new IntersectionObserver(
+  entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("visible");
+
+      }
+
+    });
+
+  },
+  {
+    threshold:.12
+  }
+);
+
+document
+.querySelectorAll(".reveal-item")
+.forEach(item=>{
+  revealObserver.observe(item);
+});
+
+
+/* SIX PARTS */
+
+const fiveParts=[
+
+{
+  label:"PART 01",
+  title:"Why I Made This",
+  text:`
+    This is the first time, and maybe the last time,
+    I'm making an anniversary gift like this for someone
+    I love with my whole heart.
+
+    Because after this year, I just want trips,
+    random plans, lots of memories,
+    and something new to remember every anniversary.
+  `
+},
+
+{
+  label:"PART 02",
+  title:"What You Mean To Me",
+  text:`
+    Just don't leave me, I'll handle the rest.
+
+    Always forgive me for my mistakes,
+    and please, let me be yours.
+
+    I don't know if I'm anything to you,
+    but to me, you're my everything.
+  `
+},
+
+{
+  label:"PART 03",
+  title:"Believe Me",
+  text:`
+    I know you don't like hearing all these things,
+    because maybe everyone says them to the person
+    they love, and later turns out to be a liar or a cheater.
+
+    But I know you're way more intelligent than I could
+    ever be, so you'll know whether there's truth in my
+    words or not.
+
+    And I believe in actions more than words.
+
+    That's why I'm trying my hardest to become financially
+    independent as soon as I can — so I can finally say
+    the things I can't say right now,
+    and become someone who can build the life I imagine.
+  `
+},
+
+{
+  label:"PART 04",
+  title:"My Motivation",
+  text:`
+    And guess what my motivation for this exam is?
+
+    You.
+
+    I just want to be with you as soon as possible.
+    Failing this exam would feel like being away from you
+    for even longer, and honestly, I don't want that.
+
+    So I'm going to give it everything I have.
+  `
+},
+
+{
+  label:"PART 05",
+  title:"My Only Wish",
+  text:`
+    I'll put my whole heart into making a place
+    for myself in your life.
+
+    Don't worry, I'll pass this.
+
+    Just...
+
+    I hope that by the time I get there,
+    you'll still be there too. ❤️
+  `
+},
+
+{
+  label:"PART 06",
+  title:"Everything I'm Building",
+  text:`
+    I'd even hold onto your feet just to make you mine,
+    because if I get everything I ever wanted,
+    but the person I want to enjoy my life with
+    isn't there with me,
+    then what's the point of all those materialistic things?
+
+    That's the moral of the story:
+
+    all I want, in the end, is you.
+
+    I'll do everything I can to make you mine.
+  `
+}
+
+];
+
+const fiveButtons=
+document.querySelectorAll(".five-button");
+
+const partLabel=
+document.getElementById("partLabel");
+
+const partTitle=
+document.getElementById("partTitle");
+
+const partText=
+document.getElementById("partText");
+
+const fiveMessage=
+document.getElementById("fiveMessage");
+
+const partProgress=
+document.getElementById("partProgress");
+
+const partCounter=
+document.getElementById("partCounter");
+
+
+function showFivePart(index){
+
+  const part=fiveParts[index];
+
+  fiveMessage.classList.remove("reveal");
+
+  void fiveMessage.offsetWidth;
+
+  fiveMessage.classList.add("reveal");
+
+  partLabel.textContent=part.label;
+
+  partTitle.textContent=part.title;
+
+  partText.innerHTML=
+    part.text.replace(/\n\s*/g,"<br>");
+
+  partProgress.style.width=
+    ((index+1)/fiveParts.length*100)+"%";
+
+  partCounter.textContent=
+    String(index+1).padStart(2,"0")+" / 06";
+
+  fiveButtons.forEach(button=>{
+    button.classList.remove("active");
+  });
+
+  fiveButtons[index].classList.add("active");
+
+}
+
+
+fiveButtons.forEach((button,index)=>{
+
+  button.addEventListener("click",()=>{
+    showFivePart(index);
+  });
+
+});
+
+
+/* REASONS */
+
+const reasons=[
+
+  "Because somehow, you became home.",
+
+  "Because even ordinary moments feel different with you.",
+
+  "Because I still smile when I remember the smallest things.",
+
+  "Because you became a part of my everyday thoughts.",
+
+  "Because I want to see the world and somehow still imagine you there.",
+
+  "Because after all this time, it's still you.",
+
+  "And honestly... I could keep going forever. ❤️"
+
+];
+
+let reasonIndex=0;
+
+const reasonText=
+document.getElementById("reasonText");
+
+const reasonButton=
+document.getElementById("reasonButton");
+
+reasonButton.addEventListener("click",()=>{
+
+  reasonIndex++;
+
+  if(reasonIndex>=reasons.length){
+    reasonIndex=0;
+  }
+
+  reasonText.style.opacity="0";
+
+  setTimeout(()=>{
+
+    reasonText.textContent=
+      reasons[reasonIndex];
+
+    reasonText.style.opacity="1";
+
+  },200);
+
+});
+
+
+/* OPEN WHEN */
+
+const modal=
+document.getElementById("modal");
+
+const modalMessage=
+document.getElementById("modalMessage");
+
+document
+.querySelectorAll(".envelope")
+.forEach(envelope=>{
+
+  envelope.addEventListener("click",()=>{
+
+    document.getElementById("modalTitle")
+      .textContent="For you ❤️";
+
+    modalMessage.innerHTML=
+      `<p>${envelope.dataset.message}</p>`;
+
+    modal.classList.add("active");
+
+  });
+
+});
+
+
+document
+.getElementById("closeModal")
+.addEventListener("click",()=>{
+
+  modal.classList.remove("active");
+
+});
+
+
+modal.addEventListener("click",e=>{
+
+  if(e.target===modal){
+    modal.classList.remove("active");
+  }
+
+});
+
+
+/* SECRET MESSAGE */
+
+document
+.getElementById("secretHeart")
+.addEventListener("click",()=>{
+
+  document.getElementById("modalTitle")
+    .textContent="If you found this... ❤️";
+
+  modalMessage.innerHTML=`
+
+    <div class="secret-content">
+
+      <p>
+        If you found this, you looked a little closer —
+        exactly what I hoped you would.
+      </p>
+
+      <p>
+        I don't know if you'll believe me, but you are real to me,
+        every time. After you, I realised that everything before you
+        was just a lie I told myself. With you, I finally discovered
+        what real love feels like.
+      </p>
+
+      <p>
+        It's all about crying the most, laughing for no reason,
+        and never really feeling alone, even when you're not here —
+        because you're always here with me, somehow knowing everything I do.
+      </p>
+
+      <p>
+        And maybe the hardest part is knowing and feeling all of this,
+        yet not being able to say it to the person I feel it all for.
+      </p>
+
+      <p>
+        I can't choose what you feel.
+        That will always be yours to decide.
+      </p>
+
+      <p>
+        But I know one thing — I'll never love anyone the way I love you,
+        because Ive already given you my all except physical,
+        and I know physical matters too.
+        But what I can give you is something I never want to give anyone else —
+        this love, my loyalty, and all that I am.
+      </p>
+
+      <p>
+        until you choose to throw me out of your life,
+        nd i req pls never do that
+      </p>
+
+      <p>
+        i can only req, last decision will be yours ofcs.
+      </p>
+
+    </div>
+
+  `;
+
+  modal.classList.add("active");
+
+});
+
+
+/* SPECIAL MUSIC SECTION */
+
+const specialReveal=
+document.getElementById("specialReveal");
+
+const specialRevealLabel=
+document.getElementById("specialRevealLabel");
+
+const specialRevealTitle=
+document.getElementById("specialRevealTitle");
+
+const specialRevealText=
+document.getElementById("specialRevealText");
+
+const specialSongStatus=
+document.getElementById("specialSongStatus");
+
+const whyYouButton=
+document.getElementById("whyYouButton");
+
+const whenNeedYouButton=
+document.getElementById("whenNeedYouButton");
+
+const whatIWantButton=
+document.getElementById("whatIWantButton");
+
+
+const specialSongs={
+
+  whyYou:{
+    src:"why-you.mp3",
+    title:"Why I Want You Only",
+    text:`
+      Because somehow, after everything,
+      you're still the person I want beside me.
+
+      Not because I need someone.
+      Just because when I imagine the life I actually want,
+      you're the person I keep imagining in it. ❤️
+    `
+  },
+
+  whenNeedYou:{
+    src:"kab-kab.mp3",
+    title:"Kab Kab Tum Chahiye",
+    text:`
+      When I have something exciting to tell you.
+      When something goes wrong.
+      When I achieve something and want you to know first.
+      When I am tired.
+      When I am happy.
+      And sometimes...
+      for absolutely no reason at all. ❤️
+    `
+  },
+
+  whatIWant:{
+    src:"what-i-want.mp3",
+    title:"What I Want From You",
+    text:`
+      There is only one thing I really want from you.
+
+      Not something expensive.
+      Not something impossible.
+
+      Just you. ❤️
+    `
+  }
+
+};
+
+
+const specialAudio=
+document.createElement("audio");
+
+specialAudio.preload="metadata";
+
+document.body.appendChild(specialAudio);
+
+
+function playSpecialSong(type){
+
+  const song=specialSongs[type];
+
+  if(!song) return;
+
+  whyYouButton.classList.remove("active");
+  whenNeedYouButton.classList.remove("active");
+  whatIWantButton.classList.remove("active");
+
+  if(type==="whyYou"){
+
+    whyYouButton.classList.add("active");
+
+  }else if(type==="whenNeedYou"){
+
+    whenNeedYouButton.classList.add("active");
+
+  }else if(type==="whatIWant"){
+
+    whatIWantButton.classList.add("active");
+
+  }
+
+  /* Stop other music */
+
+  if(typeof mohitSoloSong!=="undefined"){
+    mohitSoloSong.pause();
+  }
+
+  if(typeof music!=="undefined"){
+    music.pause();
+
+    musicBtn.textContent="♪";
+    musicPlayer.classList.remove("playing");
+  }
+
+  if(typeof danceVideo!=="undefined"){
+    danceVideo.pause();
+  }
+
+  specialReveal.classList.remove("active");
+
+  void specialReveal.offsetWidth;
+
+  specialReveal.classList.add("active");
+
+  specialRevealLabel.textContent=
+    "NOW PLAYING";
+
+  specialRevealTitle.textContent=
+    song.title;
+
+  specialRevealText.innerHTML=
+    song.text.replace(/\n\s*/g,"<br>");
+
+  specialSongStatus.textContent=
+    "♫ loading your song clip...";
+
+  specialAudio.pause();
+
+  specialAudio.currentTime=0;
+
+  specialAudio.src=song.src;
+
+  specialAudio.load();
+
+  specialAudio.play()
+    .then(()=>{
+
+      specialSongStatus.textContent=
+        "♫ playing your song clip ❤️";
+
+    })
+    .catch(()=>{
+
+      specialSongStatus.textContent=
+        "♫ put the correct clip beside story.html";
+
+    });
+
+}
+
+
+whyYouButton.addEventListener("click",()=>{
+
+  playSpecialSong("whyYou");
+
+});
+
+
+whenNeedYouButton.addEventListener("click",()=>{
+
+  playSpecialSong("whenNeedYou");
+
+});
+
+
+whatIWantButton.addEventListener("click",()=>{
+
+  playSpecialSong("whatIWant");
+
+});
+
+
+specialAudio.addEventListener("ended",()=>{
+
+  specialSongStatus.textContent=
+    "♫ clip finished ❤️";
+
+});
+
+
+specialAudio.addEventListener("error",()=>{
+
+  specialSongStatus.textContent=
+    "♫ couldn't find this song clip";
+
+});
+
+
+/* CAKE CEREMONY */
+
+const cake=
+document.getElementById("cake");
+
+const knife=
+document.getElementById("knife");
+
+const wishButton=
+document.getElementById("wishButton");
+
+const cakeMessage=
+document.getElementById("cakeMessage");
+
+const cakeInstruction=
+document.getElementById("cakeInstruction");
+
+const cutProgress=
+document.getElementById("cutProgress");
+
+const flames=
+document.querySelectorAll(".flame");
+
+const steps=[
+  document.getElementById("step1"),
+  document.getElementById("step2"),
+  document.getElementById("step3"),
+  document.getElementById("step4")
+];
+
+let wished=false;
+let dragging=false;
+let startX=0;
+let cutFinished=false;
+
+
+function setStep(number){
+
+  steps.forEach((step,index)=>{
+
+    step.classList.toggle(
+      "active",
+      index===number-1
+    );
+
+  });
+
+}
+
+
+/* WISH */
+
+wishButton.addEventListener("click",()=>{
+
+  if(wished) return;
+
+  wished=true;
+
+  flames.forEach(flame=>{
+    flame.style.display="none";
+  });
+
+  setStep(3);
+
+  cakeMessage.innerHTML=
+    "I already made mine. ❤️";
+
+  cakeInstruction.textContent=
+    "Now drag the knife across the cake... ✨";
+
+  wishButton.textContent=
+    "Wish made ❤️";
+
+  wishButton.style.opacity=".65";
+
+});
+
+
+/* KNIFE POINTER */
+
+knife.addEventListener("pointerdown",e=>{
+
+  if(cutFinished) return;
+
+  if(!wished){
+
+    cakeMessage.textContent=
+      "Make your wish first. ❤️";
+
+    return;
+
+  }
+
+  dragging=true;
+
+  startX=e.clientX;
+
+  knife.setPointerCapture(e.pointerId);
+
+});
+
+
+knife.addEventListener("pointermove",e=>{
+
+  if(!dragging || cutFinished) return;
+
+  const distance=e.clientX-startX;
+
+  const progress=
+    Math.min(
+      Math.abs(distance)/150,
+      1
+    );
+
+  cutProgress.style.width=
+    (progress*100)+"%";
+
+  const limited=
+    Math.max(
+      -45,
+      Math.min(110,distance)
+    );
+
+  knife.style.transform=
+    `translateX(calc(75px + ${limited}px)) rotate(-18deg)`;
+
+  if(Math.abs(distance)>=120){
+
+    finishCake();
+
+  }
+
+});
+
+
+knife.addEventListener("pointerup",()=>{
+  dragging=false;
+});
+
+knife.addEventListener("pointercancel",()=>{
+  dragging=false;
+});
+
+
+function finishCake(){
+
+  if(cutFinished) return;
+
+  cutFinished=true;
+  dragging=false;
+
+  cutProgress.style.width="100%";
+
+  cake.classList.add("cut");
+
+  setStep(4);
+
+  cakeMessage.innerHTML=
+    `
+      You did it. 🎂
+      <br>
+      <span style="font-size:25px">
+        Happy First Anniversary, Mohit. ❤️
+      </span>
+    `;
+
+  cakeInstruction.textContent=
+    "One piece for you. One piece for me. ❤️";
+
+  createConfetti();
+
+}
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+  const symbols=[
+    "♥",
+    "♡",
+    "✨",
+    "❤",
+    "✦",
+    "·"
+  ];
+
+  for(let i=0;i<70;i++){
+
+    const item=
+      document.createElement("div");
+
+    item.className=
+      "confetti-heart";
+
+    item.textContent=
+      symbols[
+        Math.floor(
+          Math.random()*symbols.length
+        )
+      ];
+
+    item.style.left=
+      Math.random()*100+"vw";
+
+    item.style.top=
+      "-20px";
+
+    item.style.fontSize=
+      (12+Math.random()*20)+"px";
+
+    item.style.animationDelay=
+      Math.random()*1.2+"s";
+
+    document.body.appendChild(item);
+
+    setTimeout(()=>{
+      item.remove();
+    },4000);
+
+  }
+
+}
+
+
+/* EXISTING MUSIC — TWO SONG PLAYLIST */
+
+const musicBtn=
+document.getElementById("musicBtn");
+
+const music=
+document.getElementById("ourSong");
+
+const musicPlayer=
+document.getElementById("musicPlayer");
+
+const musicTitle=
+document.getElementById("musicTitle");
+
+const musicStatus=
+document.getElementById("musicStatus");
+
+
+const songs=[
+
+  {
+    src:"song1.mp3",
+    title:"our song · part I"
+  },
+
+  {
+    src:"song2.mp3",
+    title:"our song · part II"
+  }
+
+];
+
+let currentSong=0;
+
+
+function loadSong(index){
+
+  currentSong=index;
+
+  music.src=songs[currentSong].src;
+
+  music.load();
+
+  musicTitle.textContent=
+    songs[currentSong].title;
+
+}
+
+
+function playMusic(){
+
+  /* Stop Mohit music and special clip */
+
+  mohitSoloSong.pause();
+  specialAudio.pause();
+
+  music.play()
+    .then(()=>{
+
+      musicBtn.textContent="❚❚";
+
+      musicPlayer.classList.add("playing");
+
+      musicStatus.textContent=
+        "playing for you ❤️";
+
+    })
+    .catch(()=>{
+
+      musicBtn.textContent="♪";
+
+      musicPlayer.classList.remove("playing");
+
+      musicStatus.textContent=
+        "song file not found";
+
+      alert(
+        "Make sure song1.mp3 and song2.mp3 are in the same folder as story.html ❤️"
+      );
+
+    });
+
+}
+
+
+musicBtn.addEventListener("click",()=>{
+
+  if(music.paused){
+
+    playMusic();
+
+  }else{
+
+    music.pause();
+
+    musicBtn.textContent="♪";
+
+    musicPlayer.classList.remove("playing");
+
+    musicStatus.textContent=
+      "paused ❤️";
+
+  }
+
+});
+
+
+music.addEventListener("ended",()=>{
+
+  if(currentSong < songs.length-1){
+
+    loadSong(currentSong+1);
+
+    playMusic();
+
+  }else{
+
+    musicBtn.textContent="♪";
+
+    musicPlayer.classList.remove("playing");
+
+    musicStatus.textContent=
+      "that's all for now ❤️";
+
+    loadSong(0);
+
+  }
+
+});
+
+
+music.addEventListener("error",()=>{
+
+  musicBtn.textContent="♪";
+
+  musicPlayer.classList.remove("playing");
+
+  musicStatus.textContent=
+    "check your song files";
+
+});
+
+
+loadSong(0);
+
+
+/* MOHIT SOLO PHOTO MUSIC + DANCE */
+
+const mohitSoloSection=
+document.getElementById("mohitSoloSection");
+
+const mohitSoloSong=
+document.getElementById("mohitSoloSong");
+
+const danceVideo=
+document.getElementById("danceVideo");
+
+
+let mohitMusicStarted=false;
+
+
+const mohitMusicObserver=
+new IntersectionObserver(
+  entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        /* Stop main website music */
+
+        music.pause();
+
+        musicBtn.textContent="♪";
+        musicPlayer.classList.remove("playing");
+
+        /* Stop special music */
+
+        specialAudio.pause();
+
+        /* Stop dance */
+
+        danceVideo.pause();
+
+        /* Start Mohit song */
+
+        mohitSoloSong.play()
+          .then(()=>{
+
+            mohitMusicStarted=true;
+
+          })
+          .catch(()=>{
+
+            /*
+              Mobile browsers can block autoplay.
+              Tapping the section will start it.
+            */
+
+          });
+
+      }else{
+
+        mohitSoloSong.pause();
+
+        mohitSoloSong.currentTime=0;
+
+        mohitMusicStarted=false;
+
+      }
+
+    });
+
+  },
+  {
+    threshold:.35
+  }
+);
+
+mohitMusicObserver.observe(mohitSoloSection);
+
+
+/*
+  Mobile-friendly backup:
+  tapping the Mohit photo section starts the song
+  if autoplay was blocked.
+*/
+
+mohitSoloSection.addEventListener("click",()=>{
+
+  if(mohitSoloSong.paused){
+
+    music.pause();
+
+    specialAudio.pause();
+
+    mohitSoloSong.play()
+      .then(()=>{
+
+        mohitMusicStarted=true;
+
+      })
+      .catch(()=>{});
+
+  }
+
+});
+
+
+/* DANCE VIDEO MUSIC */
+
+danceVideo.addEventListener("play",()=>{
+
+  /* Stop Mohit song */
+
+  mohitSoloSong.pause();
+
+  /* Stop special song */
+
+  specialAudio.pause();
+
+  /* Stop main website music */
+
+  music.pause();
+
+  musicBtn.textContent="♪";
+  musicPlayer.classList.remove("playing");
+
+});
+
+
+danceVideo.addEventListener("pause",()=>{
+
+  /* Nothing forced here.
+     The video's own audio remains under
+     the user's control. */
+
+});
+
+
+/* FINAL REVEAL */
+
+const finalScreen=
+document.querySelector(".final-screen");
+
+let finalShown=false;
+
+const finalObserver=
+new IntersectionObserver(
+  entries=>{
+
+    entries.forEach(entry=>{
+
+      if(
+        entry.isIntersecting &&
+        !finalShown
+      ){
+
+        finalShown=true;
+
+        for(let i=0;i<18;i++){
+
+          setTimeout(()=>{
+
+            const heart=
+              document.createElement("div");
+
+            heart.className=
+              "confetti-heart";
+
+            heart.textContent=
+              Math.random()>.5
+              ? "♥"
+              : "♡";
+
+            heart.style.left=
+              (35+Math.random()*30)+"vw";
+
+            heart.style.top=
+              "45vh";
+
+            heart.style.fontSize=
+              (15+Math.random()*15)+"px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(()=>{
+              heart.remove();
+            },3000);
+
+          },i*120);
+
+        }
+
+      }
+
+    });
+
+  },
+  {
+    threshold:.45
+  }
+);
+
+finalObserver.observe(finalScreen);
+
+</script>
+
+</body>
+</html>
